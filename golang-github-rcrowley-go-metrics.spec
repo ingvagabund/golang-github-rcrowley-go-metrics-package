@@ -1,26 +1,25 @@
 %global debug_package   %{nil}
 %global import_path     github.com/rcrowley/go-metrics
 %global gopath          %{_datadir}/gocode
-%global commit          c121dfe45d66997e43e25a6823fbe7466c8403fe
+%global commit          3be59ceb5538550555459fb77d0efe0e218cdfc7
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
-Name:           golang-github-mreiferson-go-httpclient
+Name:           golang-github-rcrowley-go-metrics
 Version:        0
 Release:        0.0.git%{shortcommit}%{?dist}
-Summary:        A Go HTTP client library
+Summary:        Go port of Coda Hales Metrics library
 License:        BSD
-URL:            https://github.com/mreiferson/go-httpclient
-Source0:        https://github.com/mreiferson/go-httpclient/archive/%{commit}/%{name}-%{commit}.tar.gz
+URL:            https://github.com/rcrowley/go-metrics
+Source0:        https://github.com/rcrowley/go-metrics/archive/%{commit}/%{name}-%{commit}.tar.gz
 BuildArch:      noarch
 
 %description
-Provides an HTTP Transport that implements the `RoundTripper` interface and
-can be used as a built in replacement for the standard librarys.
+Go port of Coda Hales Metrics library
 
 %package devel
 BuildRequires:  golang
 Requires:       golang
-Summary:        A Go HTTP client library
+Summary:        Go port of Coda Hales Metrics library
 Provides:       golang(%{import_path}) = %{version}-%{release}
 
 %description devel
@@ -41,8 +40,8 @@ cp -av *.go %{buildroot}/%{gopath}/src/%{import_path}
 %dir %attr(755,root,root) %{gopath}
 %dir %attr(755,root,root) %{gopath}/src
 %dir %attr(755,root,root) %{gopath}/src/github.com
-%dir %attr(755,root,root) %{gopath}/src/github.com/mreiferson
-%dir %attr(755,root,root) %{gopath}/src/github.com/mreiferson/go-httpclient
+%dir %attr(755,root,root) %{gopath}/src/github.com/rcrowley
+%dir %attr(755,root,root) %{gopath}/src/github.com/rcrowley/go-metrics
 %{gopath}/src/%{import_path}/*.go
 
 %changelog
