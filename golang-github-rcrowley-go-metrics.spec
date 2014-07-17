@@ -1,5 +1,5 @@
 %global debug_package   %{nil}
-%global import_path     github.com/mreiferson/go-httpclient
+%global import_path     github.com/rcrowley/go-metrics
 %global gopath          %{_datadir}/gocode
 %global commit          c121dfe45d66997e43e25a6823fbe7466c8403fe
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
